@@ -14,6 +14,14 @@ document.getElementById('startBtn').addEventListener('click', async () => {
         const audioUrl = URL.createObjectURL(audioBlob);
         const audio = document.getElementById('audioPlayback');
         audio.src = audioUrl;
+        
+        const link = document.createElement('a');
+        link.href = audioUrl;
+        link.download = 'recording.wav';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
         audioChunks = []; // Clear the audioChunks for the next recording
     };
 
