@@ -1,6 +1,7 @@
 FROM ubuntu
 
 WORKDIR /app
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 COPY requirements.txt /app
 COPY demo /app
